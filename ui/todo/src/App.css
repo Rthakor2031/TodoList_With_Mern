@@ -1,0 +1,147 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+body{
+  background-color: #000;
+  width: auto;
+}
+nav{
+  top: 0;
+  max-width:100%;
+  height:70px;
+  background-color:#2DAA9E;
+}
+.navButton{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #270082; /* Primary Blue */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navButton:hover {
+  background-color: #0056b3; /* Darker shade */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Active (Pressed) Effect */
+.navButton:active {
+  background-color: #004494;
+  transform: scale(0.98);
+}
+
+/* Disabled Button */
+.navButton:disabled {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Different Variants */
+.navButton.primary {
+  background-color: #007bff;
+}
+
+.navButton.secondary {
+  background-color: #6c757d;
+}
+
+.navButton.success {
+  background-color: #28a745;
+}
+
+.navButton.danger {
+  background-color: #dc3545;
+}
+
+.navButton.warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.navButton.info {
+  background-color: #17a2b8;
+}
+
+
+.container{ 
+  width:80%;
+  display: flex;
+  margin: auto;
+}
+.container ul{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  margin-top:15px;
+}
+
+.containerForm {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  margin:5% auto;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+h2 span {
+  font-weight: bold;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+}
+
+.input-field:focus {
+  border-bottom: 2px solid #6a11cb;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, #00c6ff, #6a11cb);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
