@@ -31,6 +31,10 @@ npm run dev
 -Desktop viev 
 ![image](https://github.com/user-attachments/assets/3acb97dd-c316-4132-a307-260ba01cd9da)
 
+Delete Todo 
+![image](https://github.com/user-attachments/assets/f558ac15-bd02-4a81-9919-b69ca1005dce)
+
+
 
 
 
