@@ -25,7 +25,12 @@ npm run dev
 ![image](https://github.com/user-attachments/assets/5daaf084-3ed5-4e13-b596-171e748027a6)
 
 - Mobile View
-![image](https://github.com/user-attachments/assets/8d5dd783-dd29-444d-9576-bdf7c6bf9de6) 
+![image](https://github.com/user-attachments/assets/8d5dd783-dd29-444d-9576-bdf7c6bf9de6)
+
+3 - Todo-List
+-Desktop viev 
+![image](https://github.com/user-attachments/assets/3acb97dd-c316-4132-a307-260ba01cd9da)
+
 
 
 
