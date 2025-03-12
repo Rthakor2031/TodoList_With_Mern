@@ -12,7 +12,7 @@ app.use(cookieParser())
 app.use(express.json())
 const cors = require('cors')
 app.use(cors({
-    origin: 'http://localhost:5173', // ✅ Remove trailing slash
+    origin: 'http://localhost:5174', // ✅ Remove trailing slash
     credentials: true, // ✅ Allow cookies/auth headers
     methods: ["GET", "POST", "PUT", "DELETE"], // ✅ Define allowed HTTP methods
   }));

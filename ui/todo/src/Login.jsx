@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 
 const Login = () => {
+  const navigate = useNavigate()
   const [login, setlogin] = useState({
     email: "",
     password: "",
@@ -16,21 +17,44 @@ const Login = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const Data = await axios.post("http://localhost:5005/user/login", login, {
+      var Data = await axios.post("http://localhost:5005/user/login", login, {
         headers: {
           "Content-Type": "application/json",
         },
         withCredentials: true,
       });
       if (Data.status === 200) {
-        toast.success("Login successful!");
+        toast.success(error.response.data.message);
+        // console.log(error.response.data.message)
+        navigate("/todo")
       }
       setlogin({ email: "", password: "" });
+      
     } catch (error) {
-      // console.log(error.response.data.message)
-      toast.error(error.response.data.message);
+      // const {status} = error.response;
+      const {status} = error;
+      // console.log(status)
+      var {message} = error.response.data;
+        switch (status) {
+          case 403:
+            toast.error(message);
+            break;
+          case 404:
+            toast.error(message && "You don't have an account, Please create an account before login👍");
+            setTimeout(() => {
+              navigate("/")
+            },2500);
+            break;
+          case 401:
+            toast.error(message)
+            break;
+          default:
+            toast.error(message); 
+        }
     }
   };
+  
+  
   return (
     <div style={{ textAlign: "center" }}>
       <div className="containerForm">
@@ -43,7 +67,6 @@ const Login = () => {
             onChange={handlechange}
             name="email"
             value={login.email}
-            required
           />
           <input
             type="password"
@@ -52,7 +75,6 @@ const Login = () => {
             onChange={handlechange}
             name="password"
             value={login.password}
-            required
           />
           <button type="submit" className="btn">
             LOGIN

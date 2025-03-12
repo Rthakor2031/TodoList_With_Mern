@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { data, Link } from "react-router-dom";
+import { data, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 const Register = () => {
   // const notify = () => toast();
+  const navigate = useNavigate();
   const [formdata, setformdata] = useState({
     fullname: "",
     email: "",
@@ -30,8 +31,12 @@ const Register = () => {
       );
       if (Data.status === 201) {
         toast.success("Registration successful!");
+        setTimeout(() => {
+          navigate("/login")
+        },3000);
       }
       setformdata({fullname:"" , email:"" , password:""});
+      
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -49,7 +54,7 @@ const Register = () => {
             placeholder="Full Name"
             onChange={handleOnchange}
             value={formdata.fullname}
-            required
+            
           />
           <input
             type="email"
@@ -58,7 +63,7 @@ const Register = () => {
             placeholder="Email"
             onChange={handleOnchange}
             value={formdata.email}
-            required
+            
           />
           <input
             type="password"
@@ -67,7 +72,6 @@ const Register = () => {
             placeholder="Password"
             onChange={handleOnchange}
             value={formdata.password}
-            required
           />
           <button type="submit" className="btn">
             REGISTER

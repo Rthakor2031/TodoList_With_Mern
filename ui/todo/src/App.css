@@ -145,3 +145,39 @@ h2 span {
 .btn:hover {
   opacity: 0.8;
 }
+
+.wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items:flex-start;
+  width: 100%;
+  margin: auto;
+  max-width: 1400px;
+  padding: 20px;
+  gap:25px;
+  background: rgba(255, 255, 255, 0.144);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.left, .right {
+  margin-top:45px;
+  flex: 1;
+  /* background: rgba(255, 255, 255, 0.2); */
+  background-color: #535252;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  min-height:500px;
+}
+
+.left {
+  text-align: center;
+}
+
+.right {
+  text-align: center;
+}
+
+

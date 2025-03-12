@@ -5,7 +5,7 @@ const isAuth = async (req, res, next) => {
         const token = req.cookies.token; // Access token correctly
 
         if (!token) {
-            return res.status(401).json({ success: false, message: "Unauthorized! No token provided." });
+            return res.status(401).json({ success: false, message: "Unauthorized! No token provided please try to Login..." });
         }
 
         // Verify token

@@ -4,7 +4,7 @@ const Create_Todo = async (req, res) => {
   try {
     const { title, description } = req.body;
     if (!title || !description) {
-      return res.status(403).json({ message: "All fields are required..." });
+      return res.status(404).json({ message: "All fields are required..." });
     }
 
     const createTodo = new Todo({title , description});
@@ -28,14 +28,6 @@ const GetAll_Todo = async (req , res) => {
         console.log(error);
     }
 }
-
-// const Update_Todo = async (req , res) => {
-//     try {
-//         const {}
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
 
 const Update_Todo = async (req , res) => {
   try {

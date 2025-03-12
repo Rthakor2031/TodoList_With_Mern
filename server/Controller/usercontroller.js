@@ -36,7 +36,7 @@ const Login = async (req, res) => {
     // check the user is already exist or not.
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(404).json({ message: "Invalid Password..." });
+      return res.status(404).json({ message: "This email also use for Login..." });
     }
     // Compare passwords.
     const Compared_password = await bcrypt.compare(password, user.password);
@@ -45,7 +45,7 @@ const Login = async (req, res) => {
     }
     
     // Generates Token while user login.
-    const token = jwt.sign({ UserId: user._id }, process.env.SECRET_KEY, {expiresIn: "2min"});
+    const token = jwt.sign({ UserId: user._id }, process.env.SECRET_KEY, {expiresIn: "8h"});
     
     return res.status(200).cookie("token", token , {httpOnly:true}).json({ message: "Login Successful" , token});
   } catch (error) {

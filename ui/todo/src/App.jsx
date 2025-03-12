@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../src/App.css";
 import Allroutes from "./Routes/Allroutes";
+import Todo from "./todo";
 // import { LoginCurve } from 'icons-react';
 
 const App = () => {
@@ -11,7 +12,10 @@ const App = () => {
         <div className="container">
           <ul>
             <button className="navButton">
-              <Link to={"/"} style={{ textDecoration: "none", color:"whitesmoke" }}>
+              <Link
+                to={"/"}
+                style={{ textDecoration: "none", color: "whitesmoke" }}
+              >
                 Register
               </Link>
             </button>
@@ -23,7 +27,7 @@ const App = () => {
                   textDecoration: "none",
                   display: "flex",
                   alignItems: "center",
-                  color:"whitesmoke"
+                  color: "whitesmoke",
                 }}
               >
                 {" "}
@@ -34,9 +38,15 @@ const App = () => {
           </ul>
         </div>
       </nav>
-      <div>
-        <Allroutes />
+      <div className="wrapper">
+        <div className="left">
+          <Allroutes />
+        </div>
+        {/* <div className="right">
+          <Todo />
+        </div> */}
       </div>
+      <Link to={"/todo"}></Link>
     </div>
   );
 };
