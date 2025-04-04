@@ -1,6 +1,8 @@
 # TodoList_With_Mern
 MERN with Docker Container
 
+**NOTE :- *********Docker File Config and Image create Pending only******************
+
 ********Start Server*******
 npm run server 
 
