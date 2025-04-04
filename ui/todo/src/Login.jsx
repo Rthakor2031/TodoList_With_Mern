@@ -24,17 +24,19 @@ const Login = () => {
         withCredentials: true,
       });
       if (Data.status === 200) {
-        toast.success(error.response.data.message);
-        // console.log(error.response.data.message)
-        navigate("/todo")
-      }
+        toast.success(Data.data.message);
+        setTimeout(() => {
+          navigate("/todo");
+        }, 1000);
+      }      
       setlogin({ email: "", password: "" });
       
     } catch (error) {
+      // console.log(error)
       // const {status} = error.response;
       const {status} = error;
-      // console.log(status)
       var {message} = error.response.data;
+      // console.log(message)
         switch (status) {
           case 403:
             toast.error(message);

@@ -27,6 +27,7 @@ const Register = async (req, res) => {
   }
 };
 
+
 const Login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -35,17 +36,19 @@ const Login = async (req, res) => {
     }
     // check the user is already exist or not.
     const user = await User.findOne({ email });
-    if (!user) {
+    if (user) {
       return res.status(404).json({ message: "This email also use for Login..." });
+    }
+    if(!user){
+      return res.status(404).json({ message: "User Not Found..." });
     }
     // Compare passwords.
     const Compared_password = await bcrypt.compare(password, user.password);
     if (!Compared_password) {
       return res.status(401).json({ message: "Invalid Password..." });
     }
-    
     // Generates Token while user login.
-    const token = jwt.sign({ UserId: user._id }, process.env.SECRET_KEY, {expiresIn: "8h"});
+    const token = jwt.sign({ UserId: user._id }, process.env.SECRET_KEY, {expiresIn: "24h"});
     
     return res.status(200).cookie("token", token , {httpOnly:true}).json({ message: "Login Successful" , token});
   } catch (error) {
